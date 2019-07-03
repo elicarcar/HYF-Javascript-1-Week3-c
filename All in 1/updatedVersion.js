@@ -102,15 +102,14 @@ console.log(thirdElement);
 So that vehicle("green", 3, 1) prints "a green new bike". */
 const vehicles = ["motorbike", "car", "bus", "plane", "caravan"];
 const vehicleType = (color, index, age) => {
-  usedCar = "used";
-  newCar = "new";
   const vehicle = vehicles[index];
+  let condition;
   if (age > 0) {
-    age = usedCar;
+    condition = "used";
   } else {
-    age = newCar;
+    condition = "new";
   }
-  return `a ${color} ${age} ${vehicle}`;
+  return `a ${color} ${condition} ${vehicle}`;
 };
 
 console.log(vehicleType("green ", 3, 1));
