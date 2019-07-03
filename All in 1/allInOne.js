@@ -131,52 +131,40 @@ So that it prints something like: "Amazing Joe's Garage, we service cars, motorb
 
 const myVehicles = ["car", "motorbike", "caravan", "bike"];
 
-for (let i = 0; i < myVehicles.length; i++) {
-  console.log(
-    "Amazing Joe's Garage, we service " +
-      myVehicles[i++] +
-      "s" +
-      ", " +
-      myVehicles[i++] +
-      "s" +
-      ", " +
-      myVehicles[i++] +
-      "s " +
-      "and " +
-      myVehicles[i++] +
-      "s" +
-      "."
-  );
-}
+const advertisement = () => {
+  let vehicleNames = "";
+  for (vehicle in myVehicles) {
+    if (vehicle == myVehicles.length - 1) {
+      vehicleNames = vehicleNames.substring(0, vehicleNames.length - 2);
+      vehicleNames = vehicleNames + " and " + myVehicles[vehicle] + "s" + ".";
+    } else {
+      vehicleNames = vehicleNames + myVehicles[vehicle] + "s" + ", ";
+    }
+  }
+  return `Amazing Joe's Garage, we service ${vehicleNames}`;
+};
+
+console.log(advertisement());
 
 //MJ-11.continuation-of-10
 /* What if you add one more vehicle to the list, 
 can you have that added to the advertisement without changing the code for question 10? */
-console.log(
-  "Not the code but i still have to add something to console.log part"
-);
 const myVehicles = ["car", "motorbike", "caravan", "bike", "scooter"];
 
-for (let i = 0; i < myVehicles.length; i++) {
-  console.log(
-    "Amazing Joe's Garage, we service " +
-      myVehicles[i++] +
-      "s" +
-      ", " +
-      myVehicles[i++] +
-      "s" +
-      ", " +
-      myVehicles[i++] +
-      "s" +
-      ", " +
-      myVehicles[i++] +
-      "s " +
-      "and " +
-      myVehicles[i++] +
-      "s" +
-      "."
-  );
-}
+const advertisement = () => {
+  let vehicleNames = "";
+  for (vehicle in myVehicles) {
+    if (vehicle == myVehicles.length - 1) {
+      vehicleNames = vehicleNames.substring(0, vehicleNames.length - 2);
+      vehicleNames = vehicleNames + " and " + myVehicles[vehicle] + "s" + ".";
+    } else {
+      vehicleNames = vehicleNames + myVehicles[vehicle] + "s" + ", ";
+    }
+  }
+  return `Amazing Joe's Garage, we service ${vehicleNames}`;
+};
+
+console.log(advertisement());
 
 //MJ-12.an-empty-onj
 const newObj = {};
