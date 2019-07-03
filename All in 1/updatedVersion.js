@@ -82,13 +82,17 @@ console.log(3 === 3 ? "Yes" : "no");
 but takes another parameter called age, so that vehicle("blue", 1, 5) prints 'a blue used car'*/
 
 const vehicleType = (color, age, vehicle) => {
+  let condition
   if (age > 1) {
-    age = " used ";
+    condition = " used ";
+  }else{
+    condition = " new";
+  };
+  let type
+  if (vehicle == 1) {
+    type = "car";
   }
-  if (vehicle == 5) {
-    vehicle = "car";
-  }
-  return "a " + color + age + vehicle;
+  return "a " + color + age + condition;
 };
 console.log(vehicleType("blue ", 1, 5));
 
